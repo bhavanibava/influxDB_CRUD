@@ -40,9 +40,9 @@ app.post('/influx/measurement/:name',function(req,res){
         res.send('measurement created successfully');
     });
 })
-app.delete('/influx/:measurement/:db',function(req,res){
-    console.log("req data from delete method : ",req.params.measurement,req.params.db);
-    influx.dropMeasurement(req.params.measurement,req.params.db).then(()=>{
+app.delete('/influx/:measurement',function(req,res){
+    console.log("req data from delete method : ",req.params.measurement);
+    influx.dropMeasurement(req.params.measurement).then(()=>{
         res.send('measurement droped successfully');
     });
 })

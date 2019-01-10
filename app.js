@@ -48,7 +48,7 @@ app.delete('/influx/:measurement',function(req,res){
 })
 app.delete('/influx/db/:db',function(req,res){
     console.log("db name for drop db : ",req.params.db);
-    influx.dropDatabase(req.params.db_name).then(()=>{
+    influx.dropDatabase(req.params.db).then(()=>{
         res.send('database droped successfully');
     })
 })

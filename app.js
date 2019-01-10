@@ -20,7 +20,7 @@ app.get('/influx',(req,res)=>{
         console.log('series names are : ',names);
         res.send({
             status : 200,
-            message : 'series details : '+names
+            message : `series details : \n`,names
         });
     });
     influx.getMeasurements().then(names=>{
@@ -28,7 +28,6 @@ app.get('/influx',(req,res)=>{
     })
 })
 app.post('/influx',(req,res)=>{
-    console.log("req data : ",req.body);
     influx.writePoints([req.body]).then(()=>{
         console.log('successfully created');
         res.send('successfully created');
@@ -36,8 +35,6 @@ app.post('/influx',(req,res)=>{
 })
 app.post('/influx/measurement/:name',function(req,res){
     var measurement_name = req.params.name;
-    console.log("req data from params : ",measurement_name);
-    console.log("req data : ",req.body);
     influx.writeMeasurement(measurement_name,[req.body]).then(()=>{
         console.log('measurement created successfully');
         res.send('measurement created successfully');

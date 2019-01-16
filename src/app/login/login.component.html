@@ -1,0 +1,14 @@
+<form class="form" #loginForm="ngForm" fxLayout='column' fxLayoutAlign='space-around center'>
+  <h1> LOGIN </h1>
+  <mat-form-field class="form-group">
+    <input type="email" matInput placeholder="Email" [(ngModel)]="loginData.email" name="email" #email="ngModel" required class="form-control" [class.is-invalid]="email.invalid && email.touched">
+  </mat-form-field>
+  <mat-form-field class="form-group">
+    <input type="password" [type]="show ? 'text':'password'" matInput placeholder="password" required [(ngModel)]="loginData.password" name="password" #password="ngModel" class="form-control" [class.is-invalid]="password.invalid && password.touched">
+  </mat-form-field>
+  <mat-icon *ngIf='show' (click)='hidepassword()' title='click to hide password'>visibility</mat-icon>
+  <mat-icon *ngIf='!show' (click)='hidepassword()' title='click to show password'>visibility_off</mat-icon>
+  <mat-checkbox class="form-group">Remainder me</mat-checkbox>
+  <button mat-raised-button color="accent" [disabled]="!loginForm.valid" (click)="submit(loginData)">Login</button>
+  <p><button mat-button >Forgot password?</button></p>
+</form>

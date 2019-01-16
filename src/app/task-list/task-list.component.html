@@ -1,0 +1,22 @@
+<form>
+    <div class="myTask"><br>
+      <table datatable class="table row-border hover" *ngIf="this.flag">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of this.taskData">
+            <td>{{data.title}}</td>
+            <td>{{data.description}}</td>
+            <td>
+              <button mat-raised-button title="Delete Task" (click)="delete(data.title)"><mat-icon>delete</mat-icon></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</form>

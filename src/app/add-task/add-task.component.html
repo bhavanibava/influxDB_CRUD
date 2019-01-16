@@ -1,0 +1,8 @@
+<form #taskForm="ngForm" fxLayout='column' fxLayoutAlign='space-around center'>
+  <h1> Add Task </h1>
+  <mat-form-field class="form-group">
+    <input matInput type="text" name="title" required pattern="[a-zA-Z ]*" placeholder="title" [(ngModel)]="data.title" [ngModelOptions]="{standalone: true}" #title='ngModel' class="form-control" [class.is-invalid]="title.invalid && title.touched">
+  </mat-form-field>
+  <app-ngx-editor name='description' [config]="editorConfig" [placeholder]="'description'" [(ngModel)]="data.description"></app-ngx-editor><br>
+  <button mat-raised-button color="accent" (click)="submit(data)">Add</button>
+</form>

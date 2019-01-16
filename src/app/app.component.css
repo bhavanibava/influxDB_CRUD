@@ -1,0 +1,23 @@
+.toolbar {
+    background: var(--vert-gradient-primary-fallback);
+    background: var(--vert-gradient-primary) !important;
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+}
+.matSidenavContainer{
+    position: relative;
+    top: 64px;
+    min-height: 100vh;
+    height: 100%;
+}
+.sideNav {
+    width: 15%;
+    height: 100%;
+    background: var(--vert-gradient-primary-fallback);
+    background: var(--vert-gradient-primary-reverse) !important;
+}
+.space{
+    flex: 1 1 auto;
+    font-size: 5vh
+}

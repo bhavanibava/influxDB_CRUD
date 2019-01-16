@@ -2,7 +2,7 @@
     <mat-toolbar class="toolbar mat-elevation-z8">
       <button mat-icon-button title="Menu" class="button" (click)='sidenav.toggle()'><mat-icon>menu</mat-icon></button>
       <span class="space"></span>
-      <button mat-icon-button title="logout" class="button" (click)='logout()'><mat-icon>logout</mat-icon></button>
+      <button mat-icon-button title="Logout" class="button" (click)='logout()'><mat-icon>logout</mat-icon></button>
     </mat-toolbar>
     <mat-sidenav-container class="matSidenavContainer" fxLayout='column'>
       <mat-sidenav #sidenav mode='side' class="sideNav" [opened]='true'>
@@ -12,8 +12,8 @@
                 <mat-icon>{{route.icon}}</mat-icon>
                 {{route.name}}
               </mat-list-item>
-              <mat-list-item *ngIf='!hideFlag' [routerLink]="['/login']" ><mat-icon>verified_user</mat-icon>Login</mat-list-item>
-              <mat-list-item *ngIf='!hideFlag' [routerLink]="['/signup']"><mat-icon>verified_user</mat-icon>Register</mat-list-item>
+              <mat-list-item *ngIf='!hideFlag' title="Login" [routerLink]="['/login']" ><mat-icon>verified_user</mat-icon>Login</mat-list-item>
+              <mat-list-item *ngIf='!hideFlag' title="Register" [routerLink]="['/signup']"><mat-icon>verified_user</mat-icon>Register</mat-list-item>
             </ng-container>
         </mat-nav-list>
       </mat-sidenav>

@@ -28,7 +28,8 @@ export class AddTaskComponent implements OnInit {
       "measurement": "todoTask",
       "tags": {
         "title" : data.title,
-        "description" : data.description
+        "description" : data.description,
+        "status" : "open"
       },
       "fields": {
         "id":"1"

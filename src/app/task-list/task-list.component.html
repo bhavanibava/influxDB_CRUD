@@ -5,6 +5,7 @@
           <tr>
             <th>Title</th>
             <th>Description</th>
+            <th>Status</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -12,6 +13,7 @@
           <tr *ngFor="let data of this.taskData">
             <td>{{data.title}}</td>
             <td>{{data.description}}</td>
+            <td>{{data.status}}</td>
             <td>
               <button mat-raised-button title="Delete Task" (click)="delete(data.title)"><mat-icon>delete</mat-icon></button>
             </td>

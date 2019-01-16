@@ -7,7 +7,6 @@
     <mat-sidenav-container class="matSidenavContainer" fxLayout='column'>
       <mat-sidenav #sidenav mode='side' class="sideNav" [opened]='true'>
         <mat-nav-list>
-            <button mat-button title="Menu" class="button">Menu</button>
             <ng-container>
               <mat-list-item *ngFor='let route of routeList' title='{{route.name}}' routerLink='{{route.path}}'>
                 <mat-icon>{{route.icon}}</mat-icon>
